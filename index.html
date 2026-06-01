@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PitStop Eventos | Gestão de Consignação</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="toast" class="toast"></div>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <img src="assets/logo-pitstop.jpeg" alt="PitStop Cohab" />
+        <div><strong>PitStop Cohab</strong><span>Eventos e Consignação</span></div>
+      </div>
+      <nav class="side-nav">
+        <button class="nav-btn active" data-view="dashboard">🏠 Dashboard</button>
+        <button class="nav-btn" data-view="eventos">🎉 Eventos</button>
+        <button class="nav-btn" data-view="produtos">📦 Produtos</button>
+        <button class="nav-btn" data-view="clientes">👥 Clientes</button>
+        <button class="nav-btn" data-view="patrimonio">🧊 Patrimônio</button>
+        <button class="nav-btn" data-view="financeiro">💰 Financeiro</button>
+        <button class="nav-btn" data-view="config">⚙️ Configurações</button>
+      </nav>
+      <div class="company-card">
+        <strong>PITSTOP COHAB</strong>
+        <span>Av. Ana Jacinta, Nº 2039</span>
+        <span>CNPJ: 64.712.625/0001-69</span>
+        <span>+55 18 99623-8015</span>
+        <span>@pitstopcohab</span>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="mobile-menu" id="toggleMenu">☰</button>
+        <div><h1 id="pageTitle">Dashboard</h1><p id="pageSubtitle">Controle completo dos eventos em consignação</p></div>
+        <div class="top-actions">
+          <input id="globalSearch" placeholder="Buscar cliente ou evento..." />
+          <button class="btn ghost" id="seedBtn">Restaurar exemplo</button>
+          <button class="btn primary" id="newEventBtn">+ Novo Evento</button>
+        </div>
+      </header>
+
+      <section id="dashboard" class="view active"></section>
+      <section id="eventos" class="view"></section>
+      <section id="produtos" class="view"></section>
+      <section id="clientes" class="view"></section>
+      <section id="patrimonio" class="view"></section>
+      <section id="financeiro" class="view"></section>
+      <section id="config" class="view"></section>
+    </main>
+  </div>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-card">
+      <button class="modal-close" id="closeModal">×</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <div id="printArea"></div>
+  <script type="module" src="firebase-config.example.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
